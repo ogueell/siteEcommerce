@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loja Virtual</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div class="container cabecalho-conteudo">
+        <h1 class="logo">Loja Virtual</h1>
+        <a class="botao-pedidos" href="pedidos.html">Meus pedidos</a>
+        <a class="botao-pedidos" href="favoritos.html">Favoritos</a>
+        <form class="busca" role="search" aria-label="Buscar produtos">
+          <label class="sr-only" for="campo-busca">Buscar produtos</label>
+          <input
+            id="campo-busca"
+            name="busca"
+            type="search"
+            placeholder="Buscar produtos..."
+            autocomplete="off"
+          />
+        </form>
+        <button
+          class="botao-carrinho"
+          id="abrir-carrinho"
+          type="button"
+          aria-label="Abrir carrinho"
+          aria-controls="painel-carrinho"
+          aria-expanded="false"
+        >
+          Carrinho <span id="contador-carrinho" class="contador-carrinho">0</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="conteudo-principal">
+      <section class="container secao-produtos" aria-labelledby="titulo-produtos">
+        <div class="secao-topo">
+          <h2 id="titulo-produtos">Produtos</h2>
+        </div>
+        <form class="filtros" id="form-filtros" aria-label="Filtrar e ordenar produtos">
+          <div class="campo-filtro">
+            <label for="filtro-categoria">Categoria</label>
+            <select id="filtro-categoria" name="categoria">
+              <option value="">Todas as categorias</option>
+            </select>
+          </div>
+          <div class="campo-filtro">
+            <label for="preco-minimo">Preço mínimo</label>
+            <input
+              id="preco-minimo"
+              name="preco-minimo"
+              type="number"
+              min="0"
+              step="0.01"
+              placeholder="R$ 0,00"
+            />
+          </div>
+          <div class="campo-filtro">
+            <label for="preco-maximo">Preço máximo</label>
+            <input
+              id="preco-maximo"
+              name="preco-maximo"
+              type="number"
+              min="0"
+              step="0.01"
+              placeholder="Sem limite"
+            />
+          </div>
+          <div class="campo-filtro">
+            <label for="ordenacao">Ordenar por</label>
+            <select id="ordenacao" name="ordenacao">
+              <option value="">Mais relevantes</option>
+              <option value="menor-preco">Menor preço</option>
+              <option value="maior-preco">Maior preço</option>
+              <option value="nome">Nome (A-Z)</option>
+            </select>
+          </div>
+          <button class="botao-limpar" id="limpar-filtros" type="button">
+            Limpar filtros
+          </button>
+        </form>
+        <div
+          id="lista-produtos"
+          class="grade-produtos"
+          aria-live="polite"
+          aria-busy="false"
+        ></div>
+        <p id="mensagem-vazia" class="mensagem-vazia" hidden>
+          Nenhum produto encontrado com os filtros selecionados.
+        </p>
+      </section>
+    </main>
+
+    <footer class="rodape">
+      <div class="container">
+        <p>&copy; <span id="ano-atual"></span> Loja Virtual. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <div class="carrinho-overlay" id="carrinho-overlay" hidden></div>
+    <aside
+      class="painel-carrinho"
+      id="painel-carrinho"
+      aria-labelledby="titulo-carrinho"
+      aria-hidden="true"
+      hidden
+    >
+      <div class="cabecalho-carrinho">
+        <div>
+          <p class="rotulo-carrinho">Sua seleção</p>
+          <h2 id="titulo-carrinho">Carrinho</h2>
+        </div>
+        <button
+          class="botao-fechar-carrinho"
+          id="fechar-carrinho"
+          type="button"
+          aria-label="Fechar carrinho"
+        >
+          &times;
+        </button>
+      </div>
+      <div id="itens-carrinho" class="itens-carrinho" aria-live="polite"></div>
+      <p id="carrinho-vazio" class="carrinho-vazio" hidden>
+        Seu carrinho está vazio. Adicione um produto para começar.
+      </p>
+      <div class="resumo-carrinho">
+        <div>
+          <span>Total</span>
+          <strong id="total-carrinho">R$ 0,00</strong>
+        </div>
+        <button class="botao-finalizar" type="button">Finalizar compra</button>
+      </div>
+    </aside>
+
+    <script src="js/app.js" defer></script>
+  </body>
+</html>

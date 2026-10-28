@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meus pedidos | Loja Virtual</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div class="container cabecalho-conteudo pedidos-cabecalho">
+        <h1 class="logo">Loja Virtual</h1>
+        <a class="botao-voltar-link" href="index.html">Voltar ao catálogo</a>
+      </div>
+    </header>
+
+    <main class="conteudo-principal pedidos-page">
+      <section class="container" aria-labelledby="titulo-pedidos">
+        <div class="secao-topo">
+          <div>
+            <p class="rotulo-carrinho">Histórico da conta</p>
+            <h2 id="titulo-pedidos">Meus pedidos</h2>
+          </div>
+        </div>
+
+        <div id="lista-pedidos" class="lista-pedidos" aria-live="polite"></div>
+        <p id="pedidos-vazios" class="mensagem-vazia" hidden>
+          Você ainda não realizou nenhum pedido.
+        </p>
+      </section>
+    </main>
+
+    <footer class="rodape">
+      <div class="container">
+        <p>&copy; <span id="ano-atual"></span> Loja Virtual. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="js/pedidos.js"></script>
+  </body>
+</html>

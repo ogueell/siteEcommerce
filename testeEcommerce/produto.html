@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalhes do Produto | Loja Virtual</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div class="container cabecalho-conteudo">
+        <h1 class="logo">Loja Virtual</h1>
+        <a class="botao-pedidos" href="pedidos.html">Meus pedidos</a>
+        <button class="botao-carrinho" id="abrir-carrinho" type="button" aria-label="Abrir carrinho">
+          Carrinho <span id="contador-carrinho" class="contador-carrinho">0</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="conteudo-principal produto-detalhe-page">
+      <div class="container">
+        <button class="botao-voltar" id="voltar-catalogo" type="button">← Voltar ao catálogo</button>
+        <article id="detalhe-produto" class="produto-detalhe" aria-live="polite"></article>
+      </div>
+    </main>
+
+    <footer class="rodape">
+      <div class="container">
+        <p>&copy; <span id="ano-atual"></span> Loja Virtual. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <div class="carrinho-overlay" id="carrinho-overlay" hidden></div>
+    <aside
+      class="painel-carrinho"
+      id="painel-carrinho"
+      aria-labelledby="titulo-carrinho"
+      aria-hidden="true"
+      hidden
+    >
+      <div class="cabecalho-carrinho">
+        <div>
+          <p class="rotulo-carrinho">Sua seleção</p>
+          <h2 id="titulo-carrinho">Carrinho</h2>
+        </div>
+        <button class="botao-fechar-carrinho" id="fechar-carrinho" type="button" aria-label="Fechar carrinho">
+          &times;
+        </button>
+      </div>
+      <div id="itens-carrinho" class="itens-carrinho" aria-live="polite"></div>
+      <p id="carrinho-vazio" class="carrinho-vazio" hidden>
+        Seu carrinho está vazio. Adicione um produto para começar.
+      </p>
+      <div class="resumo-carrinho">
+        <div>
+          <span>Total</span>
+          <strong id="total-carrinho">R$ 0,00</strong>
+        </div>
+        <button class="botao-finalizar" type="button">Finalizar compra</button>
+      </div>
+    </aside>
+
+    <script src="js/produtos.js"></script>
+    <script src="js/produto.js"></script>
+  </body>
+</html>

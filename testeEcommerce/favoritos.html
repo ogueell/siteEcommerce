@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favoritos | Loja Virtual</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div class="container cabecalho-conteudo favoritos-cabecalho">
+        <h1 class="logo">Loja Virtual</h1>
+        <a class="botao-pedidos" href="pedidos.html">Meus pedidos</a>
+        <a class="botao-voltar-link" href="index.html">Voltar ao catálogo</a>
+      </div>
+    </header>
+
+    <main class="conteudo-principal favoritos-page">
+      <section class="container" aria-labelledby="titulo-favoritos">
+        <div class="secao-topo">
+          <div>
+            <p class="rotulo-carrinho">Sua seleção</p>
+            <h2 id="titulo-favoritos">Produtos favoritos</h2>
+          </div>
+        </div>
+        <div id="lista-favoritos" class="grade-produtos" aria-live="polite"></div>
+        <p id="favoritos-vazios" class="mensagem-vazia" hidden>
+          Você ainda não adicionou produtos aos favoritos.
+        </p>
+      </section>
+    </main>
+
+    <footer class="rodape">
+      <div class="container">
+        <p>&copy; <span id="ano-atual"></span> Loja Virtual. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="js/produtos.js"></script>
+    <script src="js/favoritos.js"></script>
+  </body>
+</html>
